@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context="io.github.ryanfin.facerekognitionapp.ImageGallery">
 
-    <TextView
+    <ImageView
+        android:id="@+id/galleryimageview"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:text="IMAGE GALLERY ACTIVITY"
+        />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IMAGE GALLERY ACTIVITY"
-        android:layout_centerInParent="true"/>
+        android:onClick="startRetrieval"
+        android:layout_centerHorizontal="true"
+        android:text="Retrieve"
+        android:layout_below="@+id/galleryimageview"/>
 
 </RelativeLayout>
