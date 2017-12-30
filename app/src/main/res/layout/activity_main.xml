@@ -6,20 +6,18 @@
     android:layout_height="match_parent"
     tools:context="io.github.ryanfin.facerekognitionapp.MainActivity">
 
-    <TextView
-        android:id="@+id/text_view"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/local_face_recognition_title"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:src="@drawable/no_image"
         android:layout_centerInParent="true"/>
 
     <Button
@@ -30,6 +28,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
         android:onClick="startCamera"
-        android:text="Click me!" />
+        android:text="Take Picture" />
 
 </RelativeLayout>
