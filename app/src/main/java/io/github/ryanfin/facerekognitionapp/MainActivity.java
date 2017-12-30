@@ -20,6 +20,8 @@ import com.amazonaws.services.rekognition.model.Attribute;
 import com.amazonaws.services.rekognition.model.DetectFacesRequest;
 import com.amazonaws.services.rekognition.model.DetectFacesResult;
 import com.amazonaws.services.rekognition.model.Image;
+import com.amazonaws.services.rekognition.model.InvalidS3ObjectException;
+import com.amazonaws.services.rekognition.model.S3Object;
 import com.example.DetectLabelsExample;
 
 import java.io.ByteArrayOutputStream;
@@ -39,6 +41,7 @@ public class MainActivity extends Activity {
         AWSMobileClient.getInstance().initialize(this).execute();
         //call
         new CredRetriever().execute();
+
     }
 
     class CredRetriever extends AsyncTask<Void, Void, Void> {
@@ -59,6 +62,7 @@ public class MainActivity extends Activity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
         }
     }
 
@@ -78,6 +82,7 @@ public class MainActivity extends Activity {
             imageView.setImageBitmap(imageBitmap);
 
             new detectFaceThread().execute();
+            new detectLabelTask().execute();
 
         }
     }
@@ -93,6 +98,25 @@ public class MainActivity extends Activity {
             DetectFacesResult result = client.detectFaces(request);
             Log.d("DETECTFACETHREAD", result.toString());
             result.getFaceDetails();
+            return null;
+        }
+    }
+
+    class detectLabelTask extends AsyncTask<Void,Void,Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Log.d("S3THREAD", "S3 thread running...");
+            try {
+                DetectFacesRequest request = new DetectFacesRequest()
+                        .withAttributes(Attribute.ALL.toString())
+                        .withImage(new Image().withS3Object(new S3Object().withName("ryan_front.JPG").withBucket("mobile-face-recognition-bucket")));
+                client.setEndpoint("https://rekognition.eu-west-1.amazonaws.com");
+                DetectFacesResult result = client.detectFaces(request);
+                Log.d("S3THREAD", result.toString());
+
+            } catch (InvalidS3ObjectException e){
+                e.printStackTrace();
+            }
             return null;
         }
     }
