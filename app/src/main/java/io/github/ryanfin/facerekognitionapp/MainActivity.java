@@ -68,25 +68,32 @@ public class MainActivity extends Activity {
 
 
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedPos = String.valueOf(position);
+                Log.d("SPINNERSELECTED", selectedPos);
+                switch (position){
+                    case 0:
+                        //Local Face Rekognition Selected
+                        break;
+                    case 1:
+                        //Cloud Face Rekognition Selected
+                        startActivity(new Intent(MainActivity.this, ImageGallery.class));
+                        break;
+                    default:
+                        break;
+                }
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         //Spinner selection
-//        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                switch ((int)id){
-//                    case 0:
-//                        //Local Face Recognition Option Selected
-//                        Log.d("FAce0", "onItemClick: 0");
-//                        break;
-//                    case 1:
-//                        //Cloud Face Recognition Option Selected
-//                        Log.d("Face1", "onItemClick: 1");
-//                        break;
-//                    default:
-//                        break;
-//                }
-//            }
-//        });
+
+
 
         return super.onCreateOptionsMenu(menu);
     }

@@ -31,5 +31,6 @@ dependencies {
     compile 'com.amazonaws:aws-android-sdk-s3:2.3.9'
     compile 'com.amazonaws:aws-android-sdk-ddb:2.3.9'
     compile 'com.amazonaws:aws-android-sdk-rekognition:2.3.9'
+    compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
 }
