@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -32,11 +33,14 @@ public class MainActivity extends Activity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static AmazonRekognition client = null;
     Image searchImage;
+    TextView responseText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        responseText = (TextView) findViewById(R.id.responsetext);
 
         AWSMobileClient.getInstance().initialize(this).execute();
         //call
@@ -81,26 +85,47 @@ public class MainActivity extends Activity {
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(imageBitmap);
 
-            new detectFaceThread().execute();
-            new detectLabelTask().execute();
+            new detectFaceThread().execute(); //Run local recognition task
+            new detectLabelTask().execute(); //Run S3 recognition task
 
         }
     }
 
     class detectFaceThread extends AsyncTask<Void,Void,Void>{
 
+        Handler handler = new Handler();
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            //instantiate the View
+
+        }
+
         @Override
         protected Void doInBackground(Void... in) {
-            Log.d("DETECTFACETHREAD", "Face thread running...");
+            Log.d("DETECTFACETHREAD", "Local face thread running...");
             DetectFacesRequest request = new DetectFacesRequest()
                     .withAttributes(Attribute.ALL.toString())
                     .withImage(searchImage);
-            DetectFacesResult result = client.detectFaces(request);
+            final DetectFacesResult result = client.detectFaces(request);
             Log.d("DETECTFACETHREAD", result.toString());
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    responseText.setText(result.toString());
+                }
+            });
             result.getFaceDetails();
             return null;
         }
+
+        protected void onPostExecute(String result) {
+            responseText.setText(result.toString());
+        }
     }
+
+
 
     class detectLabelTask extends AsyncTask<Void,Void,Void>{
         @Override

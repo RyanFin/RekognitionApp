@@ -7,6 +7,7 @@
     tools:context="io.github.ryanfin.facerekognitionapp.MainActivity">
 
     <ImageView
+        android:id="@+id/facerecognitiontitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -21,13 +22,27 @@
         android:layout_centerInParent="true"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/takepicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
         android:onClick="startCamera"
-        android:text="Take Picture" />
+        android:text="Take Picture"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView" />
+
+    <Button
+        android:id="@+id/showresponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_alignTop="@id/takepicture"
+        android:text="Show Response" />
+
+    <TextView
+        android:id="@+id/responsetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/facerecognitiontitle"/>
 
 </RelativeLayout>
