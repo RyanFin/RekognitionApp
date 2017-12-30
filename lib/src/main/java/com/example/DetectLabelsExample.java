@@ -16,14 +16,20 @@ import com.amazonaws.services.rekognition.model.DetectFacesResult;
 import com.amazonaws.services.rekognition.model.FaceDetail;
 import com.amazonaws.services.rekognition.model.Image;
 import com.amazonaws.services.rekognition.model.S3Object;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
 public class DetectLabelsExample {
 
-    public static void main(String[] args) throws Exception {
+   public static String awsDetectJSON = awsDetectLabel();
 
+    public static void main(String[] args) throws Exception {
+        System.out.print("This is my response!!!:" + awsDetectLabel());
+    }
+
+    public static String awsDetectLabel(){
         String photo = "ryan_front.JPG";
         String bucket = "mobile-face-recognition-bucket";
 
@@ -67,10 +73,15 @@ public class DetectLabelsExample {
 
                 ObjectMapper objectMapper = new ObjectMapper();
                 System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(face));
+                return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(face);
             }
 
         } catch (AmazonRekognitionException e) {
             e.printStackTrace();
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
         }
+        return null;
     }
+
 }
