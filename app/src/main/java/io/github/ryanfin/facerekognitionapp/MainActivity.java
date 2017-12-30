@@ -93,8 +93,6 @@ public class MainActivity extends Activity {
         });
         //Spinner selection
 
-
-
         return super.onCreateOptionsMenu(menu);
     }
 

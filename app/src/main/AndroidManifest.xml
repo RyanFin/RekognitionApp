@@ -28,7 +28,7 @@
             android:name=".ResponsePopUp"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupTheme" />
-        <activity android:name=".ImageGallery"></activity>
+        <activity android:name=".ImageGallery" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
