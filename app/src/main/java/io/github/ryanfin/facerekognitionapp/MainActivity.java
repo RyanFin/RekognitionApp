@@ -9,8 +9,10 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -33,14 +35,12 @@ public class MainActivity extends Activity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static AmazonRekognition client = null;
     Image searchImage;
-    TextView responseText;
+    Button showResponseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        responseText = (TextView) findViewById(R.id.responsetext);
 
         AWSMobileClient.getInstance().initialize(this).execute();
         //call
@@ -110,19 +110,31 @@ public class MainActivity extends Activity {
                     .withImage(searchImage);
             final DetectFacesResult result = client.detectFaces(request);
             Log.d("DETECTFACETHREAD", result.toString());
+
+            //update the TextView in the main thread
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    responseText.setText(result.toString());
+                    Toast.makeText(getApplicationContext(), "Local Face Image Received...",
+                            Toast.LENGTH_SHORT).show();
+                    showResponseButton = (Button) findViewById(R.id.showresponsebtn);
+                    //On click
+                    showResponseButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(MainActivity.this, ResponsePopUp.class);
+                            intent.putExtra("POPUPRESPONSE", result.toString());
+                            startActivity(intent);
+                        }
+                    });
                 }
             });
+
+
             result.getFaceDetails();
             return null;
         }
 
-        protected void onPostExecute(String result) {
-            responseText.setText(result.toString());
-        }
     }
 
 

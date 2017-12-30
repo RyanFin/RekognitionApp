@@ -32,17 +32,12 @@
         android:layout_alignStart="@+id/imageView" />
 
     <Button
-        android:id="@+id/showresponse"
+        android:id="@+id/showresponsebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
         android:layout_alignTop="@id/takepicture"
         android:text="Show Response" />
 
-    <TextView
-        android:id="@+id/responsetext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/facerecognitiontitle"/>
 
 </RelativeLayout>
