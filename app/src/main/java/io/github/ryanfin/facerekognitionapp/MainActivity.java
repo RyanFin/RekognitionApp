@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -62,12 +63,30 @@ public class MainActivity extends Activity {
         Spinner spinner = (Spinner) item.getActionView();
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.spinner_list_item_array, android.R.layout.simple_spinner_item);
+                R.array.spinner_list_item_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
         spinner.setAdapter(adapter);
 
         //Spinner selection
+//        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                switch ((int)id){
+//                    case 0:
+//                        //Local Face Recognition Option Selected
+//                        Log.d("FAce0", "onItemClick: 0");
+//                        break;
+//                    case 1:
+//                        //Cloud Face Recognition Option Selected
+//                        Log.d("Face1", "onItemClick: 1");
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            }
+//        });
 
         return super.onCreateOptionsMenu(menu);
     }
