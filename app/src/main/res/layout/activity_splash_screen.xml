@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.ryanfin.facerekognitionapp.SplashScreen">
+
+    <ImageView
+        android:id="@+id/facerecognitiontitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/face_recognition_app_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/facerecognitionimage"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:src="@drawable/face_recognition_app_icon"
+        android:layout_centerInParent="true"/>
+
+    <ProgressBar
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/facerecognitionimage"
+        android:layout_marginTop="40dp"/>
+
+</RelativeLayout>
