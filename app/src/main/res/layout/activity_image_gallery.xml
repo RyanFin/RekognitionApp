@@ -10,6 +10,7 @@
         android:id="@+id/galleryimageview"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:src="@drawable/no_image"
         android:layout_centerHorizontal="true"
         android:text="IMAGE GALLERY ACTIVITY"
         />
@@ -22,5 +23,11 @@
         android:layout_centerHorizontal="true"
         android:text="Retrieve"
         android:layout_below="@+id/galleryimageview"/>
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_below="@id/button"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></FrameLayout>
 
 </RelativeLayout>

@@ -135,7 +135,7 @@ public class MainActivity extends Activity {
             imageView.setImageBitmap(imageBitmap);
 
             new detectFaceThread().execute(); //Run local recognition task
-            new detectLabelTask().execute(); //Run S3 recognition task
+           // new detectFacesTask().execute(); //Run S3 recognition task
 
         }
     }
@@ -186,24 +186,7 @@ public class MainActivity extends Activity {
 
     }
 
-    class detectLabelTask extends AsyncTask<Void,Void,Void>{
-        @Override
-        protected Void doInBackground(Void... voids) {
-            Log.d("S3THREAD", "S3 thread running...");
-            try {
-                DetectFacesRequest request = new DetectFacesRequest()
-                        .withAttributes(Attribute.ALL.toString())
-                        .withImage(new Image().withS3Object(new S3Object().withName("ryan_front.JPG").withBucket("mobile-face-recognition-bucket")));
-                client.setEndpoint("https://rekognition.eu-west-1.amazonaws.com");
-                DetectFacesResult result = client.detectFaces(request);
-                Log.d("S3THREAD", result.toString());
 
-            } catch (InvalidS3ObjectException e){
-                e.printStackTrace();
-            }
-            return null;
-        }
-    }
 
 
 
