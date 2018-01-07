@@ -7,4 +7,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- TODO: Intro Activity Strings -->
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+    <string name="title_slide1">Take Local Picture</string>
+    <string name="desc_slide1">Confirm your image and show response</string>
+    <string name="title_slide2">Retrieve Image From Cloud</string>
+    <string name="desc_slide2">Retrieve image stored in Amazon S3 with results processed remotely</string>
+    <string name="title_slide3">App uses two processing approaches</string>
+    <string name="desc_slide3">Local and remote face recognition processing techniques are used with Amazon Rekognition</string>
 </resources>

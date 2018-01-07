@@ -3,4 +3,18 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <!-- TODO: Intro Activity Colours -->
+    <!-- Screens background -->
+    <color name="bg_screen1">#8C8C8C</color>
+    <color name="bg_screen2">#656565</color>
+    <color name="bg_screen3">#3F3F3F</color>
+
+    <!-- dots active colors -->
+    <color name="dot_active">#000000</color>
+
+
+    <!-- dots inactive colors -->
+    <color name="dot_inactive">#cccccc</color>
 </resources>
