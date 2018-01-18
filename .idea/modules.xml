@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FaceRekognitionApp.iml" filepath="$PROJECT_DIR$/FaceRekognitionApp.iml" />
+      <module fileurl="file://C:\Users\Ryan.F\Documents\GitHub\RekognitionApp\FaceRekognitionApp.iml" filepath="C:\Users\Ryan.F\Documents\GitHub\RekognitionApp\FaceRekognitionApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/RekognitionApp.iml" filepath="$PROJECT_DIR$/RekognitionApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />

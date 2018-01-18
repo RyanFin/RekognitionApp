@@ -21,6 +21,7 @@
         android:src="@drawable/no_image"
         android:layout_centerInParent="true"/>
 
+
     <Button
         android:id="@+id/takepicture"
         android:layout_width="wrap_content"
@@ -28,6 +29,9 @@
         android:layout_marginBottom="28dp"
         android:onClick="startCamera"
         android:text="Take Picture"
+        android:background="@drawable/button_selector"
+        android:layout_weight="1"
+        android:padding="4dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imageView" />
 
@@ -36,7 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
+        android:background="@drawable/button_selector"
         android:layout_alignTop="@id/takepicture"
+        android:layout_weight="1"
+        android:padding="4dp"
         android:text="Show Response" />
 
 
