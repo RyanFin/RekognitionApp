@@ -64,8 +64,6 @@ public class MainActivity extends Activity {
     }
 
     //Menu options
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -75,7 +73,6 @@ public class MainActivity extends Activity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.spinner_list_item_array, R.layout.spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -154,7 +151,6 @@ public class MainActivity extends Activity {
             db.insert("photo", null, contentValues);
             Log.i("TEST", "onActivityResult: Bitmap added to database...");
 
-
             new detectFaceThread().execute(); //Run local recognition task
            // new detectFacesTask().execute(); //Run S3 recognition task
 
@@ -177,7 +173,6 @@ public class MainActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             //instantiate the View
-
         }
 
         @Override
@@ -207,7 +202,6 @@ public class MainActivity extends Activity {
                     });
                 }
             });
-
 
             result.getFaceDetails();
             return null;

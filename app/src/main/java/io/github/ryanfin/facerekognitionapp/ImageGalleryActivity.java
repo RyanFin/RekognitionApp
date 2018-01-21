@@ -39,7 +39,7 @@ public class ImageGalleryActivity extends Activity {
             byte[] image = c.getBlob(0);
             Bitmap bmp = DbBitmapUtility.getImage(image);
             imageView.setImageBitmap(bmp);
-            Toast.makeText(this, "select success", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "View Cached Gallery...", Toast.LENGTH_SHORT).show();
         }
 
     }
