@@ -17,6 +17,6 @@
     <string name="desc_slide1">Confirm your image and show response</string>
     <string name="title_slide2">Retrieve Image From Cloud</string>
     <string name="desc_slide2">Retrieve image stored in Amazon S3 with results processed remotely</string>
-    <string name="title_slide3">App uses two processing approaches</string>
-    <string name="desc_slide3">Local and remote face recognition processing techniques are used with Amazon Rekognition</string>
+    <string name="title_slide3">Offload Approach</string>
+    <string name="desc_slide3">Remote processing techniques using Amazon Rekognition</string>
 </resources>
