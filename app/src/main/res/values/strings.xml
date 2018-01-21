@@ -3,6 +3,7 @@
     <string-array name="spinner_list_item_array">
         <item>Local Face Rekognition</item>
         <item>Cloud Face Rekognition</item>
+        <item>Image Gallery</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

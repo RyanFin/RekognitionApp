@@ -7,7 +7,6 @@ import android.app.FragmentTransaction;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
-import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClient;
@@ -26,15 +23,12 @@ import com.amazonaws.services.rekognition.model.DetectFacesResult;
 import com.amazonaws.services.rekognition.model.Image;
 import com.amazonaws.services.rekognition.model.InvalidS3ObjectException;
 import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.bumptech.glide.Glide;
 
-import java.util.Arrays;
-
 import io.github.ryanfin.facerekognitionapp.Fragments.CloudFaceStatsFragment;
 
-public class ImageGallery extends Activity {
+public class CloudRetrievalActivity extends Activity {
 
     Button downloadButton;
     AmazonRekognition rekognitionClient= null;
@@ -43,7 +37,7 @@ public class ImageGallery extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_image_gallery);
+        setContentView(R.layout.activity_cloud_retrieval);
 
         ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(true);

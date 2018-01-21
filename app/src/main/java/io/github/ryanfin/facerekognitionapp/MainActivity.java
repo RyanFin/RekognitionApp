@@ -1,7 +1,11 @@
 package io.github.ryanfin.facerekognitionapp;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -16,7 +20,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
@@ -28,12 +31,12 @@ import com.amazonaws.services.rekognition.model.Attribute;
 import com.amazonaws.services.rekognition.model.DetectFacesRequest;
 import com.amazonaws.services.rekognition.model.DetectFacesResult;
 import com.amazonaws.services.rekognition.model.Image;
-import com.amazonaws.services.rekognition.model.InvalidS3ObjectException;
-import com.amazonaws.services.rekognition.model.S3Object;
-import com.example.DetectLabelsExample;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
+
+import io.github.ryanfin.facerekognitionapp.AuxiliaryFiles.DbBitmapUtility;
+import io.github.ryanfin.facerekognitionapp.AuxiliaryFiles.RekognitionDatabaseHelper;
 
 public class MainActivity extends Activity {
 
@@ -41,11 +44,18 @@ public class MainActivity extends Activity {
     static AmazonRekognition client = null;
     Image searchImage;
     Button showResponseButton;
+    public static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Create and initialise database
+        db = this.openOrCreateDatabase("rekognitiondb.db", Context.MODE_PRIVATE, null);
+        Log.i("TEST", "onActivityResult: Database created...");
+        // Toast.makeText(this, "Bitmap image added...", Toast.LENGTH_SHORT).show();
+        db.execSQL("create table if not exists photo (a blob)");
 
         AWSMobileClient.getInstance().initialize(this).execute();
         //call
@@ -79,7 +89,11 @@ public class MainActivity extends Activity {
                         break;
                     case 1:
                         //Cloud Face Rekognition Selected
-                        startActivity(new Intent(MainActivity.this, ImageGallery.class));
+                        startActivity(new Intent(MainActivity.this, CloudRetrievalActivity.class));
+                        break;
+                    case 2:
+                        //Image Gallery Activity Selected
+                        startActivity(new Intent(MainActivity.this, ImageGalleryActivity.class));
                         break;
                     default:
                         break;
@@ -115,7 +129,6 @@ public class MainActivity extends Activity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-
         }
     }
 
@@ -133,11 +146,27 @@ public class MainActivity extends Activity {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView);
             imageView.setImageBitmap(imageBitmap);
+            //addEntry(DbBitmapUtility.getBytes(imageBitmap));
+            //populate sqlite db with image
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("a", DbBitmapUtility.getBytes(imageBitmap));
+            db.insert("photo", null, contentValues);
+            Log.i("TEST", "onActivityResult: Bitmap added to database...");
+
 
             new detectFaceThread().execute(); //Run local recognition task
            // new detectFacesTask().execute(); //Run S3 recognition task
 
         }
+    }
+
+    public void addEntry(byte[] image) throws SQLiteException {
+        RekognitionDatabaseHelper rekognitionDatabaseHelper = new RekognitionDatabaseHelper(this);
+        SQLiteDatabase database = rekognitionDatabaseHelper.getWritableDatabase();
+        ContentValues cv = new  ContentValues();
+        cv.put("IMAGE_RESOURCE_ID",   image);
+        database.insert( "PHOTO", null, cv );
     }
 
     class detectFaceThread extends AsyncTask<Void,Void,Void>{

@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".IntroActivity"
+            android:name=".IntroSliderActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +33,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.PopupTheme" />
         <activity
-            android:name=".ImageGallery"
+            android:name=".CloudRetrievalActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".SplashScreen"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ImageGalleryActivity" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

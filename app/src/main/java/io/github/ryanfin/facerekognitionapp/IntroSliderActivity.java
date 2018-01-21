@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class IntroActivity extends Activity {
+public class IntroSliderActivity extends Activity {
 
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;

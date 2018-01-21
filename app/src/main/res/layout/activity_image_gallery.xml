@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.github.ryanfin.facerekognitionapp.ImageGallery">
+    android:orientation="vertical"
+    tools:context="io.github.ryanfin.facerekognitionapp.ImageGalleryActivity">
 
-    <ImageView
-        android:id="@+id/galleryimageview"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/no_image"
-        android:layout_centerHorizontal="true"
-        android:text="IMAGE GALLERY ACTIVITY"
-        />
-
-    <Button
-        android:id="@+id/button"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="startRetrieval"
-        android:layout_centerHorizontal="true"
-        android:text="Retrieve"
-        android:layout_below="@+id/galleryimageview"/>
+        android:layout_gravity="center"
+        android:text="Image Gallery"
+        android:layout_marginTop="20dp"/>
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_below="@id/button"
+    <ImageView
+        android:id="@+id/gallery_iv"
         android:layout_width="match_parent"
-        android:layout_height="200dp"></FrameLayout>
+        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/gallery_btn"
+        android:layout_gravity="center"
+        android:onClick="onGalleryButtonClick"
+        android:text="View image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
