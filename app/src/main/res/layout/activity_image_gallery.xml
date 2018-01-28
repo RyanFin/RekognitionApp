@@ -16,11 +16,14 @@
 
     <ImageView
         android:id="@+id/gallery_iv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp" />
 
     <Button
         android:id="@+id/gallery_btn"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:onClick="onGalleryButtonClick"
         android:text="View image"

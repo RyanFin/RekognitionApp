@@ -79,16 +79,16 @@ public class CloudRetrievalActivity extends Activity {
                 AmazonS3Client s3Client = new AmazonS3Client(credentialsProvider);
                 rekognitionClient = new AmazonRekognitionClient(credentialsProvider);
                 s3Client.setEndpoint("s3.eu-west-1.amazonaws.com");
-                S3Object object = s3Client.getObject("mobile-face-recognition-bucket","ryan_front.JPG");
-                final String ryanURL = s3Client.getResourceUrl("mobile-face-recognition-bucket","ryan_front.JPG");
+                S3Object object = s3Client.getObject("mobile-face-recognition-bucket","BradPitt1.jpg");
+                final String bradURL = s3Client.getResourceUrl("mobile-face-recognition-bucket","BradPitt1.jpg");
                 Log.d("TEST", object.toString());
-                Log.d("TEST", ryanURL);
+                Log.d("TEST", bradURL);
 
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
                         Glide.with(getBaseContext())
-                        .load(ryanURL)
+                        .load(bradURL)
                         .centerCrop()
                         .into(imageView);
                     }
