@@ -7,12 +7,12 @@
     android:orientation="vertical"
     tools:context="io.github.ryanfin.facerekognitionapp.ImageGalleryActivity">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Image Gallery"
-        android:layout_marginTop="20dp"/>
+        android:src="@drawable/image_gallery"
+        android:layout_marginTop="5dp"/>
 
     <!--<ImageView-->
         <!--android:id="@+id/gallery_iv"-->
