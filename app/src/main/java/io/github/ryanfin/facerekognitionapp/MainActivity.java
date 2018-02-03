@@ -146,10 +146,10 @@ public class MainActivity extends Activity {
             //addEntry(DbBitmapUtility.getBytes(imageBitmap));
             //populate sqlite db with image
 
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("a", DbBitmapUtility.getBytes(imageBitmap));
-            db.insert("photo", null, contentValues);
-            Log.i("TEST", "onActivityResult: Bitmap added to database...");
+//            ContentValues contentValues = new ContentValues();
+//            contentValues.put("a", DbBitmapUtility.getBytes(imageBitmap));
+//            db.insert("photo", null, contentValues);
+//            Log.i("TEST", "onActivityResult: Bitmap added to database...");
 
             new detectFaceThread().execute(); //Run local recognition task
            // new detectFacesTask().execute(); //Run S3 recognition task
@@ -157,13 +157,13 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void addEntry(byte[] image) throws SQLiteException {
-        RekognitionDatabaseHelper rekognitionDatabaseHelper = new RekognitionDatabaseHelper(this);
-        SQLiteDatabase database = rekognitionDatabaseHelper.getWritableDatabase();
-        ContentValues cv = new  ContentValues();
-        cv.put("IMAGE_RESOURCE_ID",   image);
-        database.insert( "PHOTO", null, cv );
-    }
+//    public void addEntry(byte[] image) throws SQLiteException {
+//        RekognitionDatabaseHelper rekognitionDatabaseHelper = new RekognitionDatabaseHelper(this);
+//        SQLiteDatabase database = rekognitionDatabaseHelper.getWritableDatabase();
+//        ContentValues cv = new  ContentValues();
+//        cv.put("IMAGE_RESOURCE_ID",   image);
+//        database.insert( "PHOTO", null, cv );
+//    }
 
     class detectFaceThread extends AsyncTask<Void,Void,Void>{
 
