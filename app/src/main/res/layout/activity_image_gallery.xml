@@ -40,8 +40,24 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="4dp"
+            android:text="Select a Celebrity:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <Spinner
+            android:id="@+id/celeb_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:entries="@array/celeb_array"
+            ></Spinner>
+
         <Button
-            android:id="@+id/arnoldbtn"
+            android:id="@+id/celeb_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onCelebResponseButtonClick"
@@ -49,12 +65,10 @@
             android:text="Show Response" />
 
         <TextView
-            android:id="@+id/arnoldtxt"
+            android:id="@+id/celeb_output_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-
 
 </ScrollView>

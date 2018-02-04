@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
@@ -38,6 +39,8 @@ public class ImageGalleryActivity extends Activity {
     Image celebImage;
     static AmazonRekognition client = null;
     ImageModel[] imageModelArray = ImageModel.getSpacePhotos();
+    public int celebPicIndex = 0; //Arnold at the start
+    Spinner celebSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,8 @@ public class ImageGalleryActivity extends Activity {
         res = getResources();
         celebPic = res.getDrawable(R.drawable.arnold_schwarzenegger);
 
+        celebSpinner = (Spinner) findViewById(R.id.celeb_spinner);
+
     }
 
     class CredRetriever extends AsyncTask<Void, Void, Void> {
@@ -88,7 +93,10 @@ public class ImageGalleryActivity extends Activity {
     }
 
     public void onCelebResponseButtonClick(View view){
+        celebPicIndex = celebSpinner.getSelectedItemPosition();
+        Log.d("CELEBTHREAD", "onCelebResponseButtonClick: " + celebPicIndex);
         new celebThread().execute();
+
     }
 
     class celebThread extends AsyncTask<Void,Void,Void>{
@@ -104,8 +112,10 @@ public class ImageGalleryActivity extends Activity {
         @Override
         protected Void doInBackground(Void... in) {
 
-            celebPic = getResources().getDrawable(imageModelArray[0].getmDrawable());
-            Log.d("CELEBTHREAD", "Local face thread running...");
+            celebPic = getResources().getDrawable(imageModelArray[celebPicIndex].getmDrawable());
+//            String[] celebArray = getResources().getStringArray(R.array.celeb_array);
+            Log.d("CELEBTHREAD", "celebThread thread running...");
+//            Log.d("CELEBTHREAD", "doInBackground: " + celebArray[1]);
             Bitmap bitmap = ((BitmapDrawable)celebPic).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
@@ -134,12 +144,6 @@ public class ImageGalleryActivity extends Activity {
 
 //    public void imageSelected(int pos){
 //        Log.d("IMAGESELECTED", "imageSelected: " + String.valueOf(pos));
-//        switch (pos){
-//            case 0:
-//                Log.d("IMAGESELECTED", "imageSelected: Running arnold thread" );
-//                new arnoldThread().execute();
-//                break;
-//        }
 //    }
 
 //    public void onGalleryButtonClick(View v) {

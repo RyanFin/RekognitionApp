@@ -48,7 +48,6 @@ public class MainActivity extends Activity {
     Button showResponseButton;
     public static SQLiteDatabase db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

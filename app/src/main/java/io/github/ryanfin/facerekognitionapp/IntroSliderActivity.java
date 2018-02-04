@@ -26,8 +26,6 @@ public class IntroSliderActivity extends Activity {
     private int[] layouts;
     private Button btnSkip, btnNext;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +55,6 @@ public class IntroSliderActivity extends Activity {
         viewPagerAdapter = new ViewPagerAdapter();
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-
-
 
     }
 

@@ -10,7 +10,6 @@ public class ResponsePopUp extends Activity {
 
     public static TextView responseText;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
