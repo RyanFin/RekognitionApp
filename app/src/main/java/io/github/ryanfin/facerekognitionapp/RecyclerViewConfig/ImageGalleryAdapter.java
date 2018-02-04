@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import io.github.ryanfin.facerekognitionapp.ImageGalleryActivity;
 import io.github.ryanfin.facerekognitionapp.R;
 
 /**
@@ -58,14 +59,12 @@ public class ImageGalleryAdapter extends RecyclerView.Adapter<ImageGalleryAdapte
 
         @Override
         public void onClick(View view) {
+            ImageGalleryActivity imageGalleryActivity = new ImageGalleryActivity();
 
-//            int position = getAdapterPosition();
-//            if(position != RecyclerView.NO_POSITION) {
-//                SpacePhoto spacePhoto = mSpacePhotos[position];
-//                Intent intent = new Intent(mContext, SpacePhotoActivity.class);
-//                intent.putExtra(SpacePhotoActivity.EXTRA_SPACE_PHOTO, spacePhoto);
-//                startActivity(intent);
-//            }
+            int position = getAdapterPosition();
+            if(position != RecyclerView.NO_POSITION) {
+//                imageGalleryActivity.imageSelected(position);
+            }
         }
     }
 

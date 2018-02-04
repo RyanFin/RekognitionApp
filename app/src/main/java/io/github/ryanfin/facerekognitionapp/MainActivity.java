@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,6 +47,7 @@ public class MainActivity extends Activity {
     Image searchImage;
     Button showResponseButton;
     public static SQLiteDatabase db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,12 +209,7 @@ public class MainActivity extends Activity {
             result.getFaceDetails();
             return null;
         }
-
     }
-
-
-
-
 
 
 }
