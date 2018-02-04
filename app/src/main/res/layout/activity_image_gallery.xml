@@ -18,22 +18,6 @@
         android:src="@drawable/image_gallery"
         android:layout_marginTop="5dp"/>
 
-    <!--<ImageView-->
-        <!--android:id="@+id/gallery_iv"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_width="300dp"-->
-        <!--android:layout_height="300dp" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/gallery_btn"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:onClick="onGalleryButtonClick"-->
-        <!--android:text="View image"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.regions.Regions;
@@ -41,6 +42,7 @@ public class ImageGalleryActivity extends Activity {
     ImageModel[] imageModelArray = ImageModel.getSpacePhotos();
     public int celebPicIndex = 0; //Arnold at the start
     Spinner celebSpinner;
+    TextView celebResultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +54,6 @@ public class ImageGalleryActivity extends Activity {
 
         new CredRetriever().execute();
 
-
-//        imageView = (ImageView) findViewById(R.id.gallery_iv);
-//
-//        //Use Glide image gallery to create an image Corpus
-//        Glide.with(getApplicationContext())
-//                .load("https://static.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg")
-//                .into(imageView);
-//        Glide.with(getApplicationContext())
-//                .load("https://www.wallpaperink.co.uk/gallery/shutterstock/sunsets-beaches/Pink_Sunset.jpg")
-//                .into(imageView);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
 
@@ -75,6 +67,7 @@ public class ImageGalleryActivity extends Activity {
         celebPic = res.getDrawable(R.drawable.arnold_schwarzenegger);
 
         celebSpinner = (Spinner) findViewById(R.id.celeb_spinner);
+        celebResultTextView = (TextView) findViewById(R.id.celeb_output_txt);
 
     }
 
@@ -96,7 +89,6 @@ public class ImageGalleryActivity extends Activity {
         celebPicIndex = celebSpinner.getSelectedItemPosition();
         Log.d("CELEBTHREAD", "onCelebResponseButtonClick: " + celebPicIndex);
         new celebThread().execute();
-
     }
 
     class celebThread extends AsyncTask<Void,Void,Void>{
@@ -133,7 +125,7 @@ public class ImageGalleryActivity extends Activity {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-
+                    celebResultTextView.setText(result.toString());
                 }
             });
 

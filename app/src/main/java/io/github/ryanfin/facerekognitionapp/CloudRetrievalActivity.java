@@ -42,21 +42,6 @@ public class CloudRetrievalActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(true);
 
-
-
-//        final ImageView imageView = (ImageView) findViewById(R.id.galleryimageview);
-//
-//        downloadButton = (Button) findViewById(R.id.button);
-//        downloadButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Glide.with(getBaseContext())
-//                        .load("https://s3-eu-west-1.amazonaws.com/mobile-face-recognition-bucket/ryan_barbados.JPG")
-//                        .centerCrop()
-//                        .into(imageView);
-//            }
-//        });
-
     }
 
     class s3Setup extends AsyncTask<Void,Void,Void>{
@@ -144,6 +129,5 @@ public class CloudRetrievalActivity extends Activity {
         new s3Setup().execute();
         new detectFacesTask().execute();
     }
-
 
 }
