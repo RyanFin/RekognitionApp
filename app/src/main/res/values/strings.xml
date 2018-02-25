@@ -13,6 +13,10 @@
         <item>Brad Pitt</item>
         <item>Beyonce</item>
         <item>Will Smith</item>
+        <item>Alan Sugar</item>
+        <item>Elon Musk</item>
+        <item>Richard Branson</item>
+        <item>Steve Jobs</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

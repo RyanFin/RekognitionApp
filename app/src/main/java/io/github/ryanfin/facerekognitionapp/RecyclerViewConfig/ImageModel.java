@@ -74,7 +74,11 @@ public class ImageModel implements Parcelable {
                 new ImageModel("https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg", "Barack Obama",R.drawable.barack_obama),
                 new ImageModel("http://www.observerbd.com/2017/11/27/1511791440.jpg", "Brad Pitt",R.drawable.brad_pitt),
                 new ImageModel("https://www.unilad.co.uk/wp-content/uploads/2016/03/celeb1.jpg", "Beyonce",R.drawable.beyonce),
-                new ImageModel("http://ambmagazine.com/wp-content/uploads/2017/11/Celebrity-News-May-18-2017-Early-Edition.jpg", "Will Smith",R.drawable.will_smith),
+                new ImageModel("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Will_Smith_by_Gage_Skidmore.jpg/1200px-Will_Smith_by_Gage_Skidmore.jpg", "Will Smith",R.drawable.will_smith),
+                new ImageModel("https://secure.i.telegraph.co.uk/multimedia/archive/01418/sugar_1418175c.jpg", "Alan Sugar",R.drawable.alan_sugar),
+                new ImageModel("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Elon_Musk_2015.jpg/220px-Elon_Musk_2015.jpg", "Elon Musk",R.drawable.elon_musk),
+                new ImageModel("https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_80%2Cw_300/MTE4MDAzNDEwNDYyNDEwMjU0/sir-richard-branson-9224520-1-402.jpg", "Richard Branson",R.drawable.richard_branson),
+                new ImageModel("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg/1200px-Steve_Jobs_Headshot_2010-CROP.jpg", "Steve Jobs",R.drawable.steve_jobs),
         };
     }
 
