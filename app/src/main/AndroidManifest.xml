@@ -38,7 +38,11 @@
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait" />
-        <activity android:name=".ImageGalleryActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".ImageGalleryActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".LocalImageRecognitionActivity"
+            android:parentActivityName=".MainActivity" ></activity>
     </application>
 
 </manifest>

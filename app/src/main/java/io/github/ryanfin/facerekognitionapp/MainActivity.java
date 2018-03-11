@@ -84,13 +84,17 @@ public class MainActivity extends Activity {
                 Log.d("SPINNERSELECTED", selectedPos);
                 switch (position){
                     case 0:
-                        //Local Face Rekognition Selected
+                        //Face Analysis Selected
                         break;
                     case 1:
                         //Cloud Face Rekognition Selected
-                        startActivity(new Intent(MainActivity.this, CloudRetrievalActivity.class));
+                        startActivity(new Intent(MainActivity.this, LocalImageRecognitionActivity.class));
                         break;
                     case 2:
+                        //Cloud Face Rekognition Selected
+                        startActivity(new Intent(MainActivity.this, CloudRetrievalActivity.class));
+                        break;
+                    case 3:
                         //Image Gallery Activity Selected
                         startActivity(new Intent(MainActivity.this, ImageGalleryActivity.class));
                         break;

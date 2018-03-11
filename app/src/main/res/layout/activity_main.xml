@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:src="@drawable/local_face_recognition_title"/>
+        android:src="@drawable/face_analysis_title"/>
 
     <ImageView
         android:id="@+id/imageView"

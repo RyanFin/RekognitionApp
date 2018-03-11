@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">FaceRekognitionApp</string>
     <string-array name="spinner_list_item_array">
-        <item>Local Face Rekognition</item>
-        <item>Cloud Face Rekognition</item>
+        <item>Face Analysis</item>
+        <item>Local Image Recognition</item>
+        <item>Cloud Face Recognition</item>
         <item>Image Gallery</item>
     </string-array>
 
