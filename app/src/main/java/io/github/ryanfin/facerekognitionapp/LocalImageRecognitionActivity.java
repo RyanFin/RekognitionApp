@@ -37,17 +37,15 @@ public class LocalImageRecognitionActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(true);
 
-        for (int i = 0; i <100; i++){
-            new localRecognitionThread().execute();
-        }
-
-       // new CredRetriever().execute();
-
+        new CredRetriever().execute();
 
     }
 
     public void onLocalRecognitionButtonClick(View view){
-        new localRecognitionThread().execute();
+        for (int i = 0; i <100; i++){
+            new localRecognitionThread().execute();
+        }
+        //new localRecognitionThread().execute();
     }
 
     class CredRetriever extends AsyncTask<Void, Void, Void> {
