@@ -88,6 +88,9 @@ public class ImageGalleryActivity extends Activity {
     public void onCelebResponseButtonClick(View view){
         celebPicIndex = celebSpinner.getSelectedItemPosition();
         Log.d("CELEBTHREAD", "onCelebResponseButtonClick: " + celebPicIndex);
+//        for(int i = 0; i < 100; i++) {
+//            new celebThread().execute();
+//        }
         new celebThread().execute();
     }
 
