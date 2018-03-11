@@ -37,7 +37,12 @@ public class LocalImageRecognitionActivity extends Activity {
         ActionBar actionBar = getActionBar();
         actionBar.setHomeButtonEnabled(true);
 
-        new CredRetriever().execute();
+        for (int i = 0; i <100; i++){
+            new CredRetriever().execute();
+        }
+
+       // new CredRetriever().execute();
+
 
     }
 
