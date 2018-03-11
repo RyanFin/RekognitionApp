@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RekognitionApp.iml" filepath="$PROJECT_DIR$/RekognitionApp.iml" />
+      <module fileurl="file://C:\Users\user\Documents\GitHub\RekognitionApp\RekognitionApp.iml" filepath="C:\Users\user\Documents\GitHub\RekognitionApp\RekognitionApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\user\Documents\GitHub\RekognitionApp\app\app.iml" filepath="C:\Users\user\Documents\GitHub\RekognitionApp\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://C:\Users\user\Documents\GitHub\RekognitionApp\lib\lib.iml" filepath="C:\Users\user\Documents\GitHub\RekognitionApp\lib\lib.iml" />
     </modules>
   </component>
 </project>
