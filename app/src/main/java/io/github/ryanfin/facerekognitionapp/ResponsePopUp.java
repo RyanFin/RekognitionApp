@@ -19,7 +19,7 @@ import java.util.Map;
 public class ResponsePopUp extends Activity {
 
     public static TextView responseText;
-    TextView smileValueTv, eyeGlassesValueTv;
+    TextView smileValueTv, eyeGlassesValueTv, genderValueTv;
     JSONObject jsonResponse;
     JSONArray jsonArray;
 
@@ -34,7 +34,7 @@ public class ResponsePopUp extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width * 0.81), (int)(height * 0.81));
+        getWindow().setLayout((int)(width * 0.815), (int)(height * 0.81));
 
         //Get Intent details
         Intent intent = getIntent();
@@ -48,6 +48,7 @@ public class ResponsePopUp extends Activity {
         //Populate the Views for Face Features
         smileValueTv = (TextView) findViewById(R.id.smile_value);
         eyeGlassesValueTv = (TextView) findViewById(R.id.eyeglasses_value);
+        genderValueTv = (TextView) findViewById(R.id.gender_value);
 
 
         try {
@@ -63,6 +64,8 @@ public class ResponsePopUp extends Activity {
                 smileValueTv.setText(smile);
                 String eyeGlasses = face.get("Eyeglasses").toString();
                 eyeGlassesValueTv.setText(eyeGlasses);
+                String gender = face.get("Gender").toString();
+                genderValueTv.setText(gender);
 
             }
             //Toast.makeText(this, "Json: "+temp, Toast.LENGTH_LONG).show();

@@ -61,12 +61,34 @@
             <TextView
                 android:id="@+id/eyeglasses_value"
                 android:layout_width="wrap_content"
-                android:layout_height="15dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="28dp"
                 android:text="placehold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/smile_value" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="32dp"
+                android:text="Gender:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#ff0077"
+                app:layout_constraintEnd_toStartOf="@+id/gender_value"
+                app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/gender_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="32dp"
+                android:text="placehold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/eyeglasses_value" />
 
 
             <TextView
