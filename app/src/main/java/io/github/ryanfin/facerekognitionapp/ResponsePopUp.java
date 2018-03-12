@@ -19,7 +19,7 @@ import java.util.Map;
 public class ResponsePopUp extends Activity {
 
     public static TextView responseText;
-    TextView smileValueTv, eyeGlassesValueTv, genderValueTv;
+    TextView smileValueTv, eyeGlassesValueTv, genderValueTv, beardValueTv, mustacheValueTv, eyesOpenValueTv, mouthOpenValueTv, picQualityValueTV;
     JSONObject jsonResponse;
     JSONArray jsonArray;
 
@@ -49,6 +49,11 @@ public class ResponsePopUp extends Activity {
         smileValueTv = (TextView) findViewById(R.id.smile_value);
         eyeGlassesValueTv = (TextView) findViewById(R.id.eyeglasses_value);
         genderValueTv = (TextView) findViewById(R.id.gender_value);
+        beardValueTv = (TextView) findViewById(R.id.beard_value);
+        mustacheValueTv = (TextView) findViewById(R.id.mustache_value);
+        eyesOpenValueTv = (TextView) findViewById(R.id.eyes_open_value);
+        mouthOpenValueTv = (TextView) findViewById(R.id.mouth_open_value);
+        picQualityValueTV = (TextView) findViewById(R.id.pic_quality_value);
 
 
         try {
@@ -66,6 +71,17 @@ public class ResponsePopUp extends Activity {
                 eyeGlassesValueTv.setText(eyeGlasses);
                 String gender = face.get("Gender").toString();
                 genderValueTv.setText(gender);
+                String mustache = face.get("Mustache").toString();
+                mustacheValueTv.setText(mustache);
+                String beard = face.get("Beard").toString();
+                beardValueTv.setText(beard);
+                String eyesOpen = face.get("EyesOpen").toString();
+                eyesOpenValueTv.setText(eyesOpen);
+                String mouthOpen = face.get("MouthOpen").toString();
+                mouthOpenValueTv.setText(mouthOpen);
+                String picQuality = face.get("Quality").toString();
+                picQualityValueTV.setText(picQuality);
+
 
             }
             //Toast.makeText(this, "Json: "+temp, Toast.LENGTH_LONG).show();

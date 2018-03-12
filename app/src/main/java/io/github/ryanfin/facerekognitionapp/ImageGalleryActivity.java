@@ -113,7 +113,7 @@ public class ImageGalleryActivity extends Activity {
 //            Log.d("CELEBTHREAD", "doInBackground: " + celebArray[1]);
             Bitmap bitmap = ((BitmapDrawable)celebPic).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG,25,stream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG,50,stream);
 
             ByteBuffer imageBytes = ByteBuffer.wrap(stream.toByteArray());
             celebImage = new Image();

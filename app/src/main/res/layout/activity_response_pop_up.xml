@@ -22,12 +22,13 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp">
+            android:background="#97BEE2"
+            android:layout_height="300dp">
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
-                android:layout_height="15dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:layout_marginTop="80dp"
                 android:text="Smile:"
@@ -39,7 +40,7 @@
             <TextView
                 android:id="@+id/smile_value"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="28dp"
                 android:text="placehold"
@@ -51,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="15dp"
                 android:text="EyeGlasses:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#ff0077"
@@ -63,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="12dp"
                 android:text="placehold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/smile_value" />
@@ -72,8 +73,8 @@
                 android:id="@+id/gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="28dp"
                 android:text="Gender:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#ff0077"
@@ -90,6 +91,94 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eyeglasses_value" />
 
+            <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Beard:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#ff0077"
+            app:layout_constraintEnd_toStartOf="@+id/beard_value"
+            app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <TextView
+                android:id="@+id/beard_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="32dp"
+                android:text="placehold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/gender_value" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="11dp"
+                android:text="Mustache:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#ff0077"
+                app:layout_constraintEnd_toStartOf="@+id/mustache_value"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:layout_editor_absoluteX="224dp" />
+
+            <TextView
+                android:id="@+id/mustache_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:text="placehold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/beard_value" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Eyes Open:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#ff0077"
+                app:layout_constraintEnd_toStartOf="@+id/eyes_open_value"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/eyes_open_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:text="placehold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mustache_value" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="12dp"
+                android:text="Mouth Open:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#ff0077"
+                app:layout_constraintEnd_toStartOf="@+id/eyes_open_value"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/mouth_open_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="12dp"
+                android:text="placehold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eyes_open_value" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -115,13 +204,46 @@
 
 
         </android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#97E2DE"
+        android:layout_marginTop="5dp"
+        >
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:text="Pic Quality:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#3e21b3" />
+
+        <TextView
+            android:id="@+id/pic_quality_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="placehold" />
 
 
+    </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:text="Raw JSON Output:"
+            android:layout_marginTop="5dp"/>
     <TextView
         android:id="@+id/responsetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="23sp"
+        android:textSize="17sp"
         android:layout_marginTop="5dp"/>
 
 
