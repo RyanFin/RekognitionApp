@@ -156,7 +156,6 @@ public class MainActivity extends Activity {
 //            contentValues.put("a", DbBitmapUtility.getBytes(imageBitmap));
 //            db.insert("photo", null, contentValues);
 //            Log.i("TEST", "onActivityResult: Bitmap added to database...");
-
             new detectFaceThread().execute(); //Run local recognition task
            // new detectFacesTask().execute(); //Run S3 recognition task
 
@@ -196,11 +195,14 @@ public class MainActivity extends Activity {
                 public void run() {
                     Toast.makeText(getApplicationContext(), "Local Face Image Received...",
                             Toast.LENGTH_SHORT).show();
+
+
                     showResponseButton = (Button) findViewById(R.id.showresponsebtn);
                     //On click
                     showResponseButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             Intent intent = new Intent(MainActivity.this, ResponsePopUp.class);
                             intent.putExtra("POPUPRESPONSE", result.toString());
                             startActivity(intent);

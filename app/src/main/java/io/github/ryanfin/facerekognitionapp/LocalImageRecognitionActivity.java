@@ -27,7 +27,7 @@ import java.nio.ByteBuffer;
 public class LocalImageRecognitionActivity extends Activity {
 
     static AmazonRekognition client = null;
-    Image ryanImage;
+    Image myImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,18 +75,18 @@ public class LocalImageRecognitionActivity extends Activity {
         @Override
         protected Void doInBackground(Void... in) {
 
-            Drawable myDrawable = getResources().getDrawable(R.drawable.ryan_image);
+            Drawable myDrawable = getResources().getDrawable(R.drawable.john_local);
 
             Bitmap bitmap = ((BitmapDrawable)myDrawable).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG,50,stream);
 
             ByteBuffer imageBytes = ByteBuffer.wrap(stream.toByteArray());
-            ryanImage = new Image();
-            ryanImage.withBytes(imageBytes);
+            myImage = new Image();
+            myImage.withBytes(imageBytes);
             DetectFacesRequest request = new DetectFacesRequest()
                     .withAttributes(Attribute.ALL.toString())
-                    .withImage(ryanImage);
+                    .withImage(myImage);
             final DetectFacesResult result = client.detectFaces(request);
             Log.d("RYANRESULT", result.toString());
 
