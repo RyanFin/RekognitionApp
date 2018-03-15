@@ -5,8 +5,8 @@ https://stackoverflow.com/questions/20839788/gnuplot-plot-data-file-simple-x-and
 cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData' 
 set multiplot
 set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
-set xlabel "CPU (%)"
-set ylabel "Tests"
+set xlabel "Tests
+set ylabel "CPU (%)"
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
 plot 'local_cpu_data.dat' with linespoints ls 1 title "Local App", \
 'remote_cpu_data.dat' with linespoints ls 2 title "Remote App"
