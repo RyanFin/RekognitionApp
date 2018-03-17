@@ -5,7 +5,7 @@ https://stackoverflow.com/questions/20839788/gnuplot-plot-data-file-simple-x-and
 cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\50% Compression' 
 set multiplot
 set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
-set xlabel "Tests
+set xlabel "Tests"
 set ylabel "CPU (%)"
 set title "CPU 50% Compression Rate"
 set key outside;
