@@ -19,7 +19,8 @@ import java.util.Map;
 public class ResponsePopUp extends Activity {
 
     public static TextView responseText;
-    TextView smileValueTv, eyeGlassesValueTv, genderValueTv, beardValueTv, mustacheValueTv, eyesOpenValueTv, mouthOpenValueTv, picQualityValueTV;
+    TextView smileValueTv, eyeGlassesValueTv, genderValueTv, beardValueTv, mustacheValueTv,
+    eyesOpenValueTv, mouthOpenValueTv, picQualityValueTV, emotionsTV;
     JSONObject jsonResponse;
     JSONArray jsonArray;
 
@@ -54,6 +55,7 @@ public class ResponsePopUp extends Activity {
         eyesOpenValueTv = (TextView) findViewById(R.id.eyes_open_value);
         mouthOpenValueTv = (TextView) findViewById(R.id.mouth_open_value);
         picQualityValueTV = (TextView) findViewById(R.id.pic_quality_value);
+        emotionsTV = (TextView) findViewById(R.id.emotion_values);
 
 
         try {
@@ -81,6 +83,8 @@ public class ResponsePopUp extends Activity {
                 mouthOpenValueTv.setText(mouthOpen);
                 String picQuality = face.get("Quality").toString();
                 picQualityValueTV.setText(picQuality);
+                String emotions = face.get("Emotions").toString();
+                emotionsTV.setText(emotions);
 
 
             }
