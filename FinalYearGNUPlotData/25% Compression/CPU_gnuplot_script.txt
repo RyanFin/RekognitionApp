@@ -12,6 +12,8 @@ set key right top;
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
 set style line 3 lc rgb '#8E44AD' lt 1 lw 2 pt 7 ps 1.5   # --- purple
 set style line 4 lc rgb '#458b32' lt 1 lw 2 pt 7 ps 1.5   # --- green
+set arrow from 1.32641,23.4327 to 52.0120,25.4054 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 2.69768,9.43723 to 50.9868,9.76190 lc rgb "#d34c4c" nohead # Line of Best Fit
 plot 'local_cpu_data.dat' with linespoints ls 1 title "Local App", \
 'remote_cpu_data.dat' with linespoints ls 2 title "Remote App"
 
