@@ -11,6 +11,8 @@ set title "ODROID Energy Data (100% Compression Rate)"
 set key outside;
 set key right top;
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+set arrow from 1.21190,0.0516309 to 9.73730,0.0532050 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 1.11276,0.0421070 to 9.78686,0.0353381 lc rgb "#d34c4c" nohead # Line of Best Fit
 plot 'local_odroid_data.dat' with linespoints ls 1 title "Local App", \
 'remote_odroid_data.dat' with linespoints ls 2 title "Remote App"
 

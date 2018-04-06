@@ -11,6 +11,8 @@ set title "CPU 50% Compression Rate"
 set key outside;
 set key right top;
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+set arrow from 1.32641,23.4327 to 52.0120,25.4054 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 0.128156,9.42837 to 49.6155,10.0758 lc rgb "#d34c4c" nohead # Line of Best Fit
 plot 'local_cpu_data.dat' with linespoints ls 1 title "Local App", \
 'remote_cpu_data.dat' with linespoints ls 2 title "Remote App"
 

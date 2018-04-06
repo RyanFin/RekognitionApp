@@ -11,6 +11,8 @@ set title "Memory 100% Compression Rate"
 set key outside;
 set key right top;
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+set arrow from 1.73651,26.5289 to 49.5386,45.4191 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 1.86467,18.0283 to 49.6668,22.5935 lc rgb "#d34c4c" nohead # Line of Best Fit
 plot 'local_memory_data.dat' with linespoints ls 1 title "Local App", \
 'remote_memory_data.dat' with linespoints ls 2 title "Remote App"
 
