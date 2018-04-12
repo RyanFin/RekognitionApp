@@ -1,0 +1,21 @@
+cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\New Plots\100% Compression' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set ylabel "Memory (MB)"
+set title "Memory at 100% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+
+set arrow from 1,22.1625 to 2,20.3719 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 2,20.3719 to 3,20.2342 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 3,20.2342 to 4,21.3361 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 4,21.3361 to 5,21.6116 lc rgb "#d34c4c" nohead # Line of Best Fit
+
+set arrow from 1,35.6612 to 2,37.8650 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 2,37.8650 to 3,38.2782 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,38.2782 to 4,40.0689 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,40.0689 to 5,36.4876 lc rgb "#0060ad" nohead # Line of Best Fit
+plot 'Memory_100_local.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Local App",\
+'Memory_100_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"

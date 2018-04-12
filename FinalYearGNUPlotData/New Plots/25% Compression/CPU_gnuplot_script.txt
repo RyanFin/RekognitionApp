@@ -1,0 +1,19 @@
+http://www.gnuplotting.org/plotting-data/
+https://stackoverflow.com/questions/20839788/gnuplot-plot-data-file-simple-x-and-y-columns-setting-suitable-color-and-s
+
+cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\New Plot - Remote\25% Compression' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set ylabel "CPU (%)"
+set title "CPU 25% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+#set arrow from 1.32641,23.4327 to 52.0120,25.4054 lc rgb "#0060ad" nohead # Line of Best Fit
+#set arrow from 2.69768,9.43723 to 50.9868,9.76190 lc rgb "#d34c4c" nohead # Line of Best Fit
+plot 'CPU_25_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"\
+'Memory_25.dat' with linespoints ls 2 
+
+
+

@@ -42,7 +42,7 @@ public class LocalImageRecognitionActivity extends Activity {
     }
 
     public void onLocalRecognitionButtonClick(View view){
-        for (int i = 0; i <100; i++){
+        for (int i = 0; i <10; i++){
             new localRecognitionThread().execute();
         }
         //new localRecognitionThread().execute();
@@ -75,7 +75,7 @@ public class LocalImageRecognitionActivity extends Activity {
         @Override
         protected Void doInBackground(Void... in) {
 
-            Drawable myDrawable = getResources().getDrawable(R.drawable.john_local);
+            Drawable myDrawable = getResources().getDrawable(R.drawable.img5);
 
             Bitmap bitmap = ((BitmapDrawable)myDrawable).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();

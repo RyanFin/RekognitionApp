@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".IntroSliderActivity"
+            android:name=".LocalImageRecognitionActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +41,7 @@
         <activity
             android:name=".ImageGalleryActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LocalImageRecognitionActivity"
+        <activity android:name=".IntroSliderActivity"
             android:parentActivityName=".MainActivity" ></activity>
     </application>
 
