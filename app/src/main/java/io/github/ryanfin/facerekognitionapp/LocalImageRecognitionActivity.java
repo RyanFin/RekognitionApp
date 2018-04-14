@@ -75,7 +75,7 @@ public class LocalImageRecognitionActivity extends Activity {
         @Override
         protected Void doInBackground(Void... in) {
 
-            Drawable myDrawable = getResources().getDrawable(R.drawable.img5);
+            Drawable myDrawable = getResources().getDrawable(R.drawable.img4);
 
             Bitmap bitmap = ((BitmapDrawable)myDrawable).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();

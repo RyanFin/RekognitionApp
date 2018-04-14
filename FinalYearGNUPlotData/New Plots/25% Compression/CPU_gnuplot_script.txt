@@ -1,19 +1,23 @@
-http://www.gnuplotting.org/plotting-data/
-https://stackoverflow.com/questions/20839788/gnuplot-plot-data-file-simple-x-and-y-columns-setting-suitable-color-and-s
-
-cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\New Plot - Remote\25% Compression' 
+cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\New Plots\25% Compression' 
 set multiplot
 set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
 set xlabel "Images"
+set xtics (1,2,3,4,5)
 set ylabel "CPU (%)"
-set title "CPU 25% Compression Rate"
+set title "CPU at 25% Compression Rate"
 set key outside;
 set key right top;
 set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
-#set arrow from 1.32641,23.4327 to 52.0120,25.4054 lc rgb "#0060ad" nohead # Line of Best Fit
-#set arrow from 2.69768,9.43723 to 50.9868,9.76190 lc rgb "#d34c4c" nohead # Line of Best Fit
-plot 'CPU_25_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"\
-'Memory_25.dat' with linespoints ls 2 
 
+set arrow from 1, 25.9265 to 2,29.9201 lc rgb "#0060ad"nohead # Line of Best Fit
+set arrow from 2,29.9201 to 3,29.2812 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,29.2812 to 4,31.9968 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,31.9968 to 5,26.8850 lc rgb "#0060ad" nohead # Line of Best Fit
 
+set arrow from 1,10.2716 to 2,14.4249 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 2,14.4249 to 3,15.8626 lc rgb "#d34c4c"nohead # Line of Best Fit
+set arrow from 3,15.8626 to 4,15.8626 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 4,15.8626 to 5,16.0224 lc rgb "#d34c4c" nohead # Line of Best Fit
 
+plot 'CPU_25_local.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Local App",\
+'CPU_25_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"
