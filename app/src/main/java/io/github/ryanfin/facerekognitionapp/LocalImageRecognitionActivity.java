@@ -75,11 +75,11 @@ public class LocalImageRecognitionActivity extends Activity {
         @Override
         protected Void doInBackground(Void... in) {
 
-            Drawable myDrawable = getResources().getDrawable(R.drawable.img4);
+            Drawable myDrawable = getResources().getDrawable(R.drawable.img5);
 
             Bitmap bitmap = ((BitmapDrawable)myDrawable).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+            bitmap.compress(Bitmap.CompressFormat.PNG,50,stream);
 
             ByteBuffer imageBytes = ByteBuffer.wrap(stream.toByteArray());
             myImage = new Image();
