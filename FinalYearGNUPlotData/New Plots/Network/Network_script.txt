@@ -1,0 +1,30 @@
+cd 'C:\Users\user\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\New Plots\Network' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set xtics (1,2,3,4,5)
+set ylabel "Network (KB/S)"
+set title "Network at 100% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#458b32' lt 1 lw 2 pt 7 ps 1.5   # --- green
+set style line 3 lc rgb '#8E44AD' lt 1 lw 2 pt 7 ps 1.5   # --- purple
+
+set arrow from 1,111.983 to 2,230.409 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 2,230.409 to 3,228.965 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,228.965 to 4,196.315 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,196.315 to 5,257.688 lc rgb "#0060ad" nohead # Line of Best Fit
+
+set arrow from 1,120.746 to 2,378.027 lc rgb "#458b32" nohead # Line of Best Fit
+set arrow from 2,378.027 to 3,389.83 lc rgb "#458b32" nohead # Line of Best Fit
+set arrow from 3,389.83 to 4,389.821 lc rgb "#458b32" nohead # Line of Best Fit
+set arrow from 4,389.821 to 5,355.098 lc rgb "#458b32" nohead # Line of Best Fit
+
+set arrow from 1,116.556 to 2,282.692 lc rgb "#8E44AD" nohead # Line of Best Fit
+set arrow from 2,282.692 to 3,258.505 lc rgb "#8E44AD" nohead # Line of Best Fit
+set arrow from 3,258.505 to 4,350.216 lc rgb "#8E44AD" nohead # Line of Best Fit
+set arrow from 4,350.216 to 5,197.489 lc rgb "#8E44AD" nohead # Line of Best Fit
+
+plot 'Network_WIFI.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Wifi",\
+'Network_4G.dat' lc rgb '#458b32' pt 7 ps 1.5 title "4G",\
+'Network_3G.dat' lc rgb '#8E44AD' pt 7 ps 1.5 title "3G"
