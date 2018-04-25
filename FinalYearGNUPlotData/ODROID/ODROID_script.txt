@@ -1,0 +1,22 @@
+cd 'C:\Users\Ryan.GF\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\ODROID' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set xtics (1,2,3,4,5)
+set ylabel "Energy (Wh)"
+set title "ODROID Energy Data at 100% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+
+set arrow from 1,0.022 to 2,0.022lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 2,0.022 to 3,0.020 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 3,0.020 to 4,0.019 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 4,0.019 to 5,0.014 lc rgb "#d34c4c" nohead # Line of Best Fit
+
+set arrow from 1,0.027 to 2,0.026 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 2,0.026 to 3,0.026 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,0.026 to 4,0.026 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,0.026 to 5,0.026 lc rgb "#0060ad" nohead # Line of Best Fit
+plot 'ODROID_local.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Local App",\
+'ODROID_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"

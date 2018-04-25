@@ -1,5 +1,5 @@
 # X   Y
-# img1.png - 6.06kb
+# img1.png - 22kb (leornardo)
   1   
   1   
   1   
@@ -10,7 +10,7 @@
   1   
   1   
   1   
-# img2.png - 21.1kb
+# img2.png - 21kb (obama)
   2   
   2   
   2   
@@ -21,7 +21,7 @@
   2   
   2   
   2   
-# img3.png - 21.4kb
+# img3.png - 22kb (beyonce)
   3   
   3   
   3   
@@ -32,7 +32,7 @@
   3   
   3   
   3   
-# img4.png - 20.4kb
+# img4.png - 23kb (brad)
   4   
   4   
   4   
@@ -43,7 +43,7 @@
   4   
   4   
   4   
-# img5.png - 20.2kb
+# img5.png - 24kb (will)
   5   
   5   
   5   
@@ -54,7 +54,7 @@
   5   
   5   
   5   
-# img6.png - 19.1kb
+# img6.png - 
   6   
   6   
   6   
@@ -65,7 +65,7 @@
   6   
   6   
   6   
-# img7.png - 22.4kb
+# img7.png - 
   7   
   7   
   7   
@@ -76,7 +76,7 @@
   7   
   7   
   7   
-# img8.png - 20.9kb
+# img8.png - 
   8   
   8   
   8   
@@ -87,7 +87,7 @@
   8   
   8   
   8   
-# img9.png - 22.1kb
+# img9.png - 
   9   
   9   
   9   
@@ -98,7 +98,7 @@
   9   
   9   
   9   
-# img10.png - 23.5kb
+# img10.png - 
   10   
   10   
   10   

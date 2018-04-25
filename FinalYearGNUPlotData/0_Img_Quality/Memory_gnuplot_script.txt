@@ -1,0 +1,23 @@
+cd 'C:\Users\Ryan.GF\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\0_Img_Quality' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set xtics (1,2,3,4,5)
+set ylabel "Memory (MB)"
+set title "Memory at 100% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+
+set arrow from 1,36.9185 to 2,32.2632 lc rgb "#0060ad"nohead # Line of Best Fit 
+set arrow from 2,32.2632 to 3,33.0796 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,33.0796 to 4,31.68 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,31.68 to 5,35.55 lc rgb "#0060ad" nohead # Line of Best Fit
+
+set arrow from 1,18.65 to 2,20.79 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 2,20.79 to 3,21.55 lc rgb "#d34c4c"nohead # Line of Best Fit
+set arrow from 3,21.55 to 4,21.14 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 4,21.14 to 5,21.73 lc rgb "#d34c4c" nohead # Line of Best Fit
+
+plot 'Memory_0_local.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Local App",\
+'Memory_0_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"
