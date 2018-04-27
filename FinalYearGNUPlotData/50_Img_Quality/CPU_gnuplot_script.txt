@@ -1,0 +1,23 @@
+cd 'C:\Users\Ryan.GF\Documents\GitHub\RekognitionApp\FinalYearGNUPlotData\50_Img_Quality' 
+set multiplot
+set style line 1 lc rgb '#0060ad' lt 1 lw 2 pt 7 ps 1.5   # --- blue
+set xlabel "Images"
+set xtics (1,2,3,4,5)
+set ylabel "CPU (%)"
+set title "CPU at 50% Compression Rate"
+set key outside;
+set key right top;
+set style line 2 lc rgb '#d34c4c' lt 1 lw 2 pt 7 ps 1.5   # --- orange
+
+set arrow from 1, 29.38 to 2,30.77 lc rgb "#0060ad"nohead # Line of Best Fit
+set arrow from 2,30.77to 3,28.9 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 3,28.9 to 4,32.03 lc rgb "#0060ad" nohead # Line of Best Fit
+set arrow from 4,32.03 to 5,29.89 lc rgb "#0060ad" nohead # Line of Best Fit
+
+set arrow from 1,15.33 to 2,14.06 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 2,14.06 to 3,14.96 lc rgb "#d34c4c"nohead # Line of Best Fit
+set arrow from 3,14.96 to 4,15.61 lc rgb "#d34c4c" nohead # Line of Best Fit
+set arrow from 4,15.61 to 5,15.85 lc rgb "#d34c4c" nohead # Line of Best Fit
+
+plot 'CPU_50_local.dat' lc rgb '#0060ad' pt 7 ps 1.5 title "Local App",\
+'CPU_50_remote.dat' lc rgb '#d34c4c' pt 7 ps 1.5 title "Remote App"
