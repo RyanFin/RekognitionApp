@@ -79,7 +79,7 @@ public class LocalImageRecognitionActivity extends Activity {
 
             Bitmap bitmap = ((BitmapDrawable)myDrawable).getBitmap();
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG,50,stream);
+            bitmap.compress(Bitmap.CompressFormat.PNG,0,stream);
 
             ByteBuffer imageBytes = ByteBuffer.wrap(stream.toByteArray());
             myImage = new Image();
